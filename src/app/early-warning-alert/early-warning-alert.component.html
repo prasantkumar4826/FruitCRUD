@@ -1,3 +1,28 @@
-<p *ngIf="view =='list'">early-warning-alert works!</p>
 
-<app-add-early-warning-alert *ngIf="view =='add'"></app-add-early-warning-alert>
+
+<div class="container" *ngIf="view =='list'">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allFruits">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price }}</td>
+          <td><button [routerLink]="['/early-warning-alert-list/maintain',item.id]">Edit {{ item.id }}</button></td>
+          <td><button (click)="DeleteID = item.id; delete()">Delete {{ item.id }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<app-add-early-warning-alert *ngIf="view =='add'" [editIDSent]="alertEditId"></app-add-early-warning-alert>
