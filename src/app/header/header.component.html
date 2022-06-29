@@ -1,4 +1,10 @@
-<button [routerLink]="['/home']">Home</button>
-<button [routerLink]="['/early-warning-alert-list','add']">Add</button>
-
-<button [routerLink]="['/early-warning-alert-list','maintain']">Maintain</button>
+<mat-toolbar color="primary">
+<section>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" [routerLink]="['/home']">Home</button>
+      <button mat-raised-button color="accent" [routerLink]="['/early-warning-alert-list','add']">Add</button>
+      <button mat-raised-button color="warn" [routerLink]="['/early-warning-alert-list','maintain']">Maintain</button>
+    </div>
+  </section>
+</mat-toolbar>
+  

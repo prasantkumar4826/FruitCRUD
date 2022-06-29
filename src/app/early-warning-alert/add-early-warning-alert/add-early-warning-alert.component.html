@@ -1,5 +1,6 @@
 <div class="container">
-    <legend>Create Item</legend>
+    <legend *ngIf="!editID">Create Item</legend>
+    <legend *ngIf="editID">update Item</legend>
     <form>
       <div class="mb-3">
         <label for="txtName" class="form-label">Name</label>
@@ -7,11 +8,11 @@
       </div>
       <div class="mb-3">
         <label for="txtPrice" class="form-label">Price</label>
-        <input type="number" name="price" [(ngModel)] = "fruitForm.price" class="form-control" id="txtPrice" />
+        <input type="text" name="price" [(ngModel)] = "fruitForm.price" class="form-control" id="txtPrice" />
       </div>
       <div class="mb-3">
         <label for="txtQuantity" class="form-label">Quantity</label>
-        <input type="number" name="quantity" [(ngModel)] = "fruitForm.quantity" class="form-control" id="txtQuantity" />
+        <input type="text" name="quantity" [(ngModel)] = "fruitForm.quantity" class="form-control" id="txtQuantity" />
       </div>
       <button *ngIf="!editID" type="button" (click)="create()" class="btn btn-primary">Create</button>
       <button *ngIf="editID" type="button" (click)="update()" class="btn btn-primary">Update</button>
