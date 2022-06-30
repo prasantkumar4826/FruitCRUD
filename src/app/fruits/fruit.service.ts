@@ -9,7 +9,7 @@ export class FruitsService {
   constructor(private http: HttpClient) {}
 
   get() {
-    return this.http.get<Fruits[]>('http://localhost:3000/fruits');
+    return this.http.get<Fruits[]>('http://40.122.209.231/api/v1/4dalert/fruits');
   }
 
   create(payload: Fruits) {
